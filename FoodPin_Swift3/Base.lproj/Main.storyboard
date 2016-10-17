@@ -1,51 +1,141 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="7uU-kK-ZHh">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Food Pin-->
+        <scene sceneID="VP4-32-6fz">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FoodPin_Swift3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="gys-Wc-DrY" customClass="RestaurantTableViewController" customModule="FoodPin_Swift3" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="fYF-am-7Kl"/>
+                        <viewControllerLayoutGuide type="bottom" id="kkr-HR-qHw"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="tZz-fF-kbv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Zuq-bZ-cL3">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="izn-M9-to0">
+                                <frame key="frameInset" minY="20" width="375" height="647"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="3zC-NH-T2y">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="80" id="y2K-Y3-jkf" customClass="RestaurantTableViewCell" customModule="FoodPin_Swift3" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="92" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3zC-NH-T2y" id="uoS-Su-fMI">
-                                            <frame key="frameInset" width="375" height="43"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="y2K-Y3-jkf" id="LLE-yz-DTo">
+                                            <frame key="frameInset" width="375" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="8IS-JG-Vn1">
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1A9-yT-4Ba">
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="60" id="1F5-pD-OpE"/>
+                                                                <constraint firstAttribute="width" constant="60" id="WvL-UT-Qxi"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="DjX-Zr-HGu">
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fyr-fx-fjQ">
+                                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uyy-Rg-nUF">
+                                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cKz-O4-Yal">
+                                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="8IS-JG-Vn1" firstAttribute="leading" secondItem="LLE-yz-DTo" secondAttribute="leadingMargin" constant="6" id="7mv-pV-yRu"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="8IS-JG-Vn1" secondAttribute="bottom" constant="1.5" id="BaX-nJ-DCl"/>
+                                                <constraint firstItem="8IS-JG-Vn1" firstAttribute="top" secondItem="LLE-yz-DTo" secondAttribute="topMargin" constant="2" id="GBC-cE-6oO"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="8IS-JG-Vn1" secondAttribute="trailing" id="YSM-fk-ZoA"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="locationLabel" destination="Uyy-Rg-nUF" id="UPO-bO-txk"/>
+                                            <outlet property="nameLabel" destination="fyr-fx-fjQ" id="JeO-rk-7Ln"/>
+                                            <outlet property="thumbnailImage" destination="1A9-yT-4Ba" id="Mxq-gR-9fn"/>
+                                            <outlet property="typeLabel" destination="cKz-O4-Yal" id="bdm-r2-WTE"/>
+                                            <segue destination="6AZ-ME-UT7" kind="show" identifier="showRestaurantDetail" id="Fgx-cO-ZgX"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Food Pin" id="OkC-Bk-uUv"/>
+                    <connections>
+                        <outlet property="RestaurantTableView" destination="izn-M9-to0" id="LnE-82-5Ya"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="en6-Nd-Wyz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1832.8" y="123.68815592203899"/>
+        </scene>
+        <!--Restaurant Detail View Controller-->
+        <scene sceneID="NCv-ls-iFv">
+            <objects>
+                <viewController storyboardIdentifier="RestaurantDetail" id="6AZ-ME-UT7" customClass="RestaurantDetailViewController" customModule="FoodPin_Swift3" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sKO-hN-6Bj"/>
+                        <viewControllerLayoutGuide type="bottom" id="3pt-8b-n2B"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sRE-wK-CSb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PzZ-ub-ooS"/>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="Zuq-bZ-cL3" secondAttribute="trailing" id="PlS-fW-7I7"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Zuq-bZ-cL3" secondAttribute="bottom" id="cWl-s8-GGJ"/>
-                            <constraint firstItem="Zuq-bZ-cL3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="fZu-zd-fg3"/>
-                            <constraint firstItem="Zuq-bZ-cL3" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="wtv-kA-BaJ"/>
+                            <constraint firstItem="PzZ-ub-ooS" firstAttribute="leading" secondItem="sRE-wK-CSb" secondAttribute="leading" id="9HS-Rw-Lwr"/>
+                            <constraint firstAttribute="trailing" secondItem="PzZ-ub-ooS" secondAttribute="trailing" id="NH5-80-Vhp"/>
+                            <constraint firstItem="PzZ-ub-ooS" firstAttribute="top" secondItem="sRE-wK-CSb" secondAttribute="top" id="TOI-a8-pPI"/>
+                            <constraint firstItem="3pt-8b-n2B" firstAttribute="top" secondItem="PzZ-ub-ooS" secondAttribute="bottom" id="sEO-r5-xcD"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="restaurantTableView" destination="Zuq-bZ-cL3" id="e3x-Co-OzZ"/>
+                        <outlet property="restaurantImageView" destination="PzZ-ub-ooS" id="0ED-3H-F14"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8x2-rF-EPh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="137.18140929535232"/>
+            <point key="canvasLocation" x="2604" y="124"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="iKH-ay-5Rd">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7uU-kK-ZHh" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="XnV-Kk-S91">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="gys-Wc-DrY" kind="relationship" relationship="rootViewController" id="12f-1q-Dk8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n0s-6N-mNb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="893.60000000000002" y="123.68815592203899"/>
         </scene>
     </scenes>
 </document>
